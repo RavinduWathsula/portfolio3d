@@ -65,6 +65,24 @@
   animation: breathing-glow 4s ease-in-out infinite;
 }
 
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -97,13 +115,19 @@ body {
 
 section {
   min-height: 100vh;
-  padding: 120px 5%;
+  padding: 80px 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 120px 5%;
+  }
 }
 
 .max-w-container {

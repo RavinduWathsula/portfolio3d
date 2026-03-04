@@ -17,7 +17,7 @@ const Contact = () => {
     return (
         <section id="contact">
             <div className="max-w-container px-4">
-                <h2 className="text-5xl font-bold mb-16 uppercase tracking-tighter text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 uppercase tracking-tighter text-center">
                     Get In <span className="text-neon-blue">Touch</span>
                 </h2>
 

@@ -45,17 +45,19 @@ const DepthParticle = ({ delay = 0, z = 0 }) => {
 }
 
 const StatItem = ({ icon: Icon, value, label, color, glowColor }) => (
-    <div className="flex items-center gap-5 group cursor-default">
-        <div className="relative">
-            <div className={`absolute inset-0 bg-${glowColor}/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-            <div className={`p-4 rounded-2xl bg-white/[0.02] border border-white/5 group-hover:border-${glowColor}/40 transition-all duration-700 shadow-2xl relative z-10 overflow-hidden`}>
+    <div className="flex items-center gap-4 sm:gap-5 group cursor-default">
+        <div className="relative flex-shrink-0">
+            {/* Breathing Glow Background */}
+            <div className={`absolute inset-0 bg-${glowColor === 'neon-blue' ? 'color-neon-blue' : glowColor === 'neon-purple' ? 'color-neon-purple' : 'amber-400'}/30 blur-2xl rounded-full animate-glow-pulse`} />
+
+            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/5 group-hover:border-${glowColor}/40 transition-all duration-700 shadow-2xl relative z-10 overflow-hidden`}>
                 <div className={`absolute inset-0 bg-gradient-to-br from-${glowColor}/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                <Icon className={`text-${color} group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 relative z-10`} size={24} />
+                <Icon className={`text-${color} group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 relative z-10`} size={20} />
             </div>
         </div>
         <div className="flex flex-col">
-            <span className={`text-4xl font-black text-white leading-none tracking-tighter group-hover:text-${color} transition-colors duration-500`}>{value}</span>
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mt-2">{label}</span>
+            <span className={`text-2xl sm:text-4xl font-black text-white leading-none tracking-tighter group-hover:text-${color} transition-colors duration-500`}>{value}</span>
+            <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mt-1 sm:mt-2">{label}</span>
         </div>
     </div>
 )
@@ -141,7 +143,7 @@ const About = () => {
             id="about"
             ref={containerRef}
             onMouseMove={handleMouseMove}
-            className="min-h-screen py-32 lg:py-64 relative flex items-center justify-center overflow-hidden bg-[#020205] selection:bg-neon-blue/30"
+            className="min-h-screen py-20 md:py-32 lg:py-64 relative flex items-center justify-center overflow-hidden bg-[#020205] selection:bg-neon-blue/30"
         >
             {/* 1. True 3D Background Layer */}
             <div className="absolute inset-0 pointer-events-none">
@@ -160,8 +162,8 @@ const About = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,243,255,0.05)_0%,transparent_70%)]" />
             </div>
 
-            <motion.div style={{ opacity: opacityFade }} className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-                <div className="flex flex-col space-y-40">
+            <motion.div style={{ opacity: opacityFade }} className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+                <div className="flex flex-col space-y-24 sm:space-y-32 lg:space-y-40">
 
                     {/* 2. Fluid 3D Heading */}
                     <motion.div
@@ -184,18 +186,18 @@ const About = () => {
                     </motion.div>
 
                     {/* 3. Bio & Holographic Card Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
-                        <div className="lg:col-span-12 xl:col-span-7 space-y-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 lg:gap-24 items-center">
+                        <div className="lg:col-span-12 xl:col-span-7 space-y-12 sm:space-y-16">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 1 }}
                                 className="space-y-6"
                             >
-                                <h3 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight">
+                                <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
                                     Architecting the next <br /> generation of <span className="text-neon-blue font-italic">elite software</span> solutions.
                                 </h3>
-                                <div className="h-1.5 w-32 bg-gradient-to-r from-neon-blue via-neon-purple to-transparent rounded-full" />
+                                <div className="h-1.5 w-24 sm:w-32 bg-gradient-to-r from-neon-blue via-neon-purple to-transparent rounded-full" />
                             </motion.div>
 
                             <div className="space-y-8 max-w-2xl">
@@ -242,11 +244,11 @@ const About = () => {
 
                             <div className="flex items-center gap-6 group cursor-pointer lg:justify-end">
                                 <div className="text-right">
-                                    <div className="text-[11px] font-black text-white uppercase tracking-[0.4em] mb-1">Elite Grade</div>
-                                    <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Global Synergy Active</div>
+                                    <div className="text-[10px] sm:text-[11px] font-black text-white uppercase tracking-[0.4em] mb-1">Elite Grade</div>
+                                    <div className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest">Global Synergy Active</div>
                                 </div>
-                                <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-neon-blue group-hover:bg-neon-blue/5 transition-all duration-500">
-                                    <Waves className="text-gray-500 group-hover:text-neon-blue group-hover:rotate-180 transition-all duration-700 font-black" size={24} />
+                                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-neon-blue group-hover:bg-neon-blue/5 transition-all duration-500 flex-shrink-0">
+                                    <Waves className="text-gray-500 group-hover:text-neon-blue group-hover:rotate-180 transition-all duration-700 font-black" size={20} />
                                 </div>
                             </div>
                         </motion.div>

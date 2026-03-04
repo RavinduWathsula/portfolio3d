@@ -60,7 +60,7 @@ const Projects = () => {
             >
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
-                        <h2 className="text-5xl font-bold uppercase tracking-tighter mb-4">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">
                             Featured <span className="text-neon-blue neon-text">Works</span>
                         </h2>
                         <p className="text-gray-400 max-w-md">
