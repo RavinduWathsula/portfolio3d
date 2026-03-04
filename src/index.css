@@ -52,12 +52,24 @@
   0%,
   100% {
     opacity: 0.8;
-    text-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3), 0 0 40px rgba(0, 243, 255, 0.1);
+    color: #00f3ff;
+  }
+
+  25% {
+    color: #bc13fe;
+    text-shadow: 0 0 25px rgba(188, 19, 254, 0.4), 0 0 50px rgba(188, 19, 254, 0.2);
   }
 
   50% {
     opacity: 1;
-    text-shadow: 0 0 40px rgba(0, 243, 255, 0.5), 0 0 80px rgba(188, 19, 254, 0.3);
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.5), 0 0 60px rgba(188, 19, 254, 0.4), 0 0 90px rgba(0, 243, 255, 0.2);
+  }
+
+  75% {
+    color: #ff00ff;
+    text-shadow: 0 0 25px rgba(255, 0, 255, 0.4), 0 0 50px rgba(255, 0, 255, 0.2);
   }
 }
 
@@ -134,4 +146,18 @@ section {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }

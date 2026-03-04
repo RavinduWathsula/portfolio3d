@@ -65,36 +65,51 @@ const StatItem = ({ icon: Icon, value, label, color, glowColor }) => (
 const HolographicCard = ({ rotateX, rotateY }) => {
     return (
         <motion.div
-            style={{ rotateX, rotateY, perspective: 1000 }}
-            className="relative group p-1 w-full max-w-[420px]"
+            style={{ rotateX, rotateY, perspective: 1000, transformStyle: "preserve-3d" }}
+            className="relative group p-1 w-full max-w-[440px]"
         >
-            <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 via-neon-purple/20 to-neon-blue/20 blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+            {/* Multi-layered Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 via-neon-purple/20 to-neon-blue/20 blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute -inset-10 bg-neon-blue/5 blur-[120px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
 
-            <div className="relative bg-white/[0.03] backdrop-blur-3xl border border-white/10 rounded-[2.5rem] p-10 overflow-hidden h-full">
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
+            <div className="relative bg-white/[0.03] backdrop-blur-3xl border border-white/10 rounded-[2.5rem] p-8 sm:p-10 overflow-hidden h-full shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                {/* Modern Grid Overlay */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.05)_1px,transparent_0)] bg-[size:24px_24px] pointer-events-none" />
 
+                {/* Advanced Shimmer */}
                 <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500 ease-in-out skew-x-12"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.1] to-transparent -translate-x-full group-hover:animate-shimmer transition-transform"
+                    style={{ skewX: -20 }}
                 />
 
-                <div className="relative z-10 space-y-8">
+                <div className="relative z-10 space-y-8" style={{ transform: "translateZ(50px)" }}>
                     <div className="flex justify-between items-start">
-                        <div className="p-4 rounded-2xl bg-black border border-white/10 shadow-[0_0_30px_rgba(168,85,247,0.15)] group-hover:shadow-neon-purple/20 transition-all duration-700">
+                        <motion.div
+                            whileHover={{ rotate: [0, -10, 10, 0] }}
+                            className="p-4 rounded-2xl bg-black border border-white/10 shadow-[0_0_30px_rgba(168,85,247,0.15)] group-hover:shadow-neon-purple/20 transition-all duration-700"
+                        >
                             <GraduationCap className="text-neon-purple" size={32} />
-                        </div>
+                        </motion.div>
                         <Cpu className="text-white/5 group-hover:text-white/20 transition-colors duration-700 animate-spin-slow" size={80} strokeWidth={0.5} />
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                         <span className="text-[11px] font-black uppercase tracking-[0.4em] text-neon-purple flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-neon-purple animate-ping" />
                             Academic Profile
                         </span>
-                        <h4 className="text-4xl font-black text-white leading-tight tracking-tighter">IT <br /> Undergraduate</h4>
-                        <p className="text-[11px] text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
-                            General Sir John Kotelawala <br />
-                            <span className="text-white/60">Defence University (KDU)</span>
-                        </p>
+                        <h4 className="text-3xl sm:text-4xl font-black text-white leading-tight tracking-tighter">
+                            Computer Science <br />
+                            <span className="text-neon-blue inline-block mt-1">Undergraduate</span>
+                        </h4>
+                        <div className="space-y-1">
+                            <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest leading-relaxed">
+                                General Sir John Kotelawala
+                            </p>
+                            <p className="text-[10px] text-white/60 font-black uppercase tracking-widest leading-relaxed">
+                                Defence University (KDU)
+                            </p>
+                        </div>
                     </div>
 
                     <div className="pt-6 flex items-center justify-between border-t border-white/5">
@@ -144,22 +159,26 @@ const About = () => {
             ref={containerRef}
             onMouseMove={handleMouseMove}
             className="min-h-screen py-20 md:py-32 lg:py-64 relative flex items-center justify-center overflow-hidden bg-[#020205] selection:bg-neon-blue/30"
+            style={{ perspective: "1500px" }}
         >
             {/* 1. True 3D Background Layer */}
-            <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
-                    style={{ rotateX: gridRotateX, rotateY: gridRotateY, perspective: 1000 }}
-                    className="absolute inset-x-0 bottom-[-20%] h-full origin-bottom opacity-10"
+                    style={{
+                        rotateX: gridRotateX,
+                        rotateY: gridRotateY,
+                        translateZ: "-100px"
+                    }}
+                    className="absolute inset-[-20%] origin-center opacity-20"
                 >
-                    <div className="w-full h-full bg-[linear-gradient(to_right,rgba(0,243,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,243,255,0.1)_1px,transparent_1px)] bg-[size:60px_60px]"
-                        style={{ transform: 'rotateX(60deg)' }} />
+                    <div className="w-full h-full bg-[linear-gradient(to_right,rgba(0,243,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,243,255,0.15)_1px,transparent_1px)] bg-[size:80px_80px]" />
                 </motion.div>
 
-                {[...Array(15)].map((_, i) => (
-                    <DepthParticle key={i} z={Math.random()} delay={i * 0.2} />
+                {[...Array(20)].map((_, i) => (
+                    <DepthParticle key={i} z={Math.random()} delay={i * 0.15} />
                 ))}
 
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,243,255,0.05)_0%,transparent_70%)]" />
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,243,255,0.08)_0%,transparent_70%)]" />
             </div>
 
             <motion.div style={{ opacity: opacityFade }} className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
@@ -179,9 +198,9 @@ const About = () => {
                             <span className="text-[11px] font-black uppercase tracking-[0.6em] text-neon-blue">Advanced Digital Ethos</span>
                         </motion.div>
 
-                        <h2 className="text-[clamp(3rem,10.5vw,10rem)] font-black text-white leading-[0.8] tracking-tight drop-shadow-[0_20px_80px_rgba(0,0,0,0.8)] pr-4">
+                        <h2 className="text-[clamp(3rem,10vw,9rem)] font-black text-white leading-[0.8] tracking-tight drop-shadow-[0_20px_80px_rgba(0,0,0,0.8)] pb-4 pr-6">
                             ABOUT <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow animate-breathing bg-[length:200%_auto]">VISION</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow animate-breathing bg-[length:200%_auto] inline-block py-2">VISION</span>
                         </h2>
                     </motion.div>
 
