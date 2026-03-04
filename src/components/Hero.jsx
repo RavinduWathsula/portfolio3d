@@ -52,12 +52,12 @@ const Hero = () => {
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="text-left"
                 >
-                    <div className="overflow-hidden mb-6">
+                    <div className="mb-6">
                         <motion.h1
-                            initial={{ y: "100%" }}
-                            animate={{ y: 0 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]"
+                            className="text-6xl md:text-8xl lg:text-[7rem] xl:text-[8.5rem] font-black tracking-tighter leading-[0.85] py-2"
                         >
                             ENGINEERING <br />
                             <span className="text-neon-blue neon-text italic">AESTHETICS</span>
@@ -68,9 +68,9 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 0.7 }}
-                        className="text-base md:text-lg text-gray-400 max-w-xl mb-10 leading-relaxed"
+                        className="text-sm md:text-lg text-gray-400 max-w-xl mb-10 leading-relaxed font-medium"
                     >
-                        Independent designer & developer specializing in <span className="text-white font-medium">high-end digital experiences</span>.
+                        Independent designer & developer specializing in <span className="text-white font-bold border-b-2 border-neon-blue/30 pb-0.5">high-end digital experiences</span>.
                         Merging industrial precision with creative soul to build the future of the web.
                     </motion.p>
 
@@ -80,10 +80,13 @@ const Hero = () => {
                             variants={buttonVariants}
                             initial="rest"
                             whileHover="hover"
-                            className="group relative px-6 md:px-8 py-3 md:py-4 bg-neon-blue text-black font-extrabold rounded-full overflow-hidden transition-shadow hover:shadow-[0_0_30px_rgba(0,243,255,0.5)] no-underline flex items-center gap-2 text-sm md:text-base"
+                            className="group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple text-black font-black rounded-full transition-all hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] no-underline flex items-center gap-3 text-sm md:text-base tracking-tighter overflow-hidden"
                         >
-                            <span>VIEW PROJECTS</span>
-                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            <span className="relative z-10">VIEW PROJECTS</span>
+                            <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+                            <motion.div
+                                className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"
+                            />
                         </motion.a>
 
                         <motion.a
@@ -91,9 +94,9 @@ const Hero = () => {
                             variants={buttonVariants}
                             initial="rest"
                             whileHover="hover"
-                            className="group px-6 md:px-8 py-3 md:py-4 border border-white/10 hover:border-neon-blue text-white font-bold rounded-full transition-all no-underline flex items-center gap-2 glass text-sm md:text-base"
+                            className="group px-8 py-4 border border-white/20 hover:border-neon-blue text-white font-bold rounded-full transition-all no-underline flex items-center gap-3 glass text-sm md:text-base tracking-tighter hover:bg-white/5"
                         >
-                            <Mail size={18} className="text-neon-blue" />
+                            <Mail size={18} className="text-neon-blue group-hover:scale-120 transition-transform" />
                             <span>GET IN TOUCH</span>
                         </motion.a>
 
@@ -103,12 +106,12 @@ const Hero = () => {
                             variants={buttonVariants}
                             initial="rest"
                             whileHover="hover"
-                            className="group flex flex-col items-center gap-1 text-[10px] font-mono text-gray-500 hover:text-neon-blue transition-colors no-underline uppercase tracking-tighter sm:ml-4"
+                            className="group flex flex-col items-center gap-1.5 text-[10px] font-mono text-gray-400 hover:text-neon-blue transition-colors no-underline uppercase tracking-widest sm:ml-4"
                         >
-                            <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-neon-blue group-hover:bg-neon-blue/5">
-                                <Download size={16} />
+                            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-neon-blue group-hover:bg-neon-blue/10 transition-all shadow-inner">
+                                <Download size={18} />
                             </div>
-                            <span>Download CV</span>
+                            <span className="font-bold">Resume</span>
                         </motion.a>
                     </div>
                 </motion.div>

@@ -37,29 +37,31 @@ const Navbar = () => {
             animate={{ y: 0 }}
             className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 md:p-6"
         >
-            <div className="glass px-4 md:px-6 py-2 rounded-full flex gap-4 md:gap-8 items-center border-white/20 shadow-2xl relative">
+            <div className="glass px-6 py-3 rounded-full flex gap-6 md:gap-10 items-center border-white/20 shadow-2xl relative">
                 {/* Social Icons - Left Corner */}
-                <div className="flex gap-3 md:gap-4 pr-4 md:pr-6 border-r border-white/10">
-                    <a
+                <div className="flex gap-4 pr-6 border-r border-white/10">
+                    <motion.a
+                        whileHover={{ scale: 1.2, color: 'var(--neon-blue)' }}
                         href="https://github.com/yourusername"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-neon-blue transition-colors"
+                        className="text-gray-400 transition-colors"
                     >
-                        <FiGithub size={18} />
-                    </a>
-                    <a
+                        <FiGithub size={22} />
+                    </motion.a>
+                    <motion.a
+                        whileHover={{ scale: 1.2, color: 'var(--neon-blue)' }}
                         href="https://linkedin.com/in/yourusername"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-neon-blue transition-colors"
+                        className="text-gray-400 transition-colors"
                     >
-                        <FiLinkedin size={18} />
-                    </a>
+                        <FiLinkedin size={22} />
+                    </motion.a>
                 </div>
 
                 {/* Nav Items */}
-                <ul className="flex gap-2 md:gap-4 items-center list-none">
+                <ul className="flex gap-1 md:gap-4 items-center list-none m-0 p-0">
                     {navItems.map((item) => {
                         const id = item.toLowerCase()
                         const isActive = activeSection === id
@@ -68,14 +70,14 @@ const Navbar = () => {
                             <li key={item} className="relative">
                                 <a
                                     href={`#${id}`}
-                                    className={`relative z-10 text-[10px] md:text-xs font-bold transition-colors uppercase tracking-widest no-underline px-3 py-1.5 block ${isActive ? 'text-black' : 'text-gray-400 hover:text-white'
+                                    className={`relative z-10 text-xs md:text-sm lg:text-base font-bold transition-colors uppercase tracking-widest no-underline px-4 py-2 block ${isActive ? 'text-black' : 'text-gray-400 hover:text-white'
                                         }`}
                                 >
                                     {item}
                                     {isActive && (
                                         <motion.div
                                             layoutId="nav-highlight"
-                                            className="absolute inset-0 bg-neon-blue rounded-full -z-10 shadow-[0_0_15px_var(--neon-blue)]"
+                                            className="absolute inset-0 bg-neon-blue rounded-full -z-10 shadow-[0_0_20px_var(--neon-blue)]"
                                             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                                         />
                                     )}
