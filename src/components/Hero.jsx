@@ -21,7 +21,7 @@ const Hero = () => {
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="relative group flex justify-center lg:justify-end order-2 lg:order-1"
                 >
-                    <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px]">
+                    <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[380px] lg:h-[380px] xl:w-[450px] xl:h-[450px] max-w-[90vw]">
                         {/* Creative Frames */}
                         <div className="absolute inset-0 bg-neon-blue rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity" />
                         <div className="absolute inset-0 border-2 border-neon-blue/30 rounded-3xl -rotate-6 group-hover:rotate-0 transition-transform duration-500" />
@@ -32,15 +32,15 @@ const Hero = () => {
                             <img
                                 src="/profile.png"
                                 alt="Profile"
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
+                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
                             />
                         </div>
 
                         {/* Decorative Elements */}
-                        <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 glass border border-white/20 rounded-2xl flex items-center justify-center backdrop-blur-xl">
+                        <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-28 sm:h-28 glass border border-white/20 rounded-2xl flex items-center justify-center backdrop-blur-xl z-20">
                             <div className="text-center">
-                                <p className="text-xl sm:text-2xl font-bold text-neon-blue">5+</p>
-                                <p className="text-[8px] sm:text-[10px] uppercase tracking-widest text-gray-400">Years Exp.</p>
+                                <p className="text-lg sm:text-2xl font-bold text-neon-blue tracking-tighter">🎓 KDU</p>
+                                <p className="text-[7px] sm:text-[9px] uppercase tracking-widest text-gray-400">Undergraduate</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const Hero = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-4xl sm:text-6xl md:text-7xl lg:text-[4.5rem] xl:text-[5.5rem] 2xl:text-[6.5rem] font-black tracking-tighter leading-[0.95] lg:leading-[0.9] py-2"
+                            className="text-[clamp(2.5rem,10vw,5rem)] xl:text-[6rem] 2xl:text-[7rem] font-black tracking-tighter leading-[0.9] py-2"
                         >
                             ENGINEERING <br />
                             <span className="text-neon-blue neon-text italic">AESTHETICS</span>

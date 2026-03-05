@@ -158,28 +158,11 @@ const About = () => {
             id="about"
             ref={containerRef}
             onMouseMove={handleMouseMove}
-            className="min-h-screen py-20 md:py-32 lg:py-64 relative flex items-center justify-center overflow-hidden bg-[#020205] selection:bg-neon-blue/30"
+            className="min-h-screen py-20 md:py-32 lg:py-64 relative flex items-center justify-center overflow-hidden bg-transparent selection:bg-neon-blue/30"
             style={{ perspective: "1500px" }}
         >
-            {/* 1. True 3D Background Layer */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <motion.div
-                    style={{
-                        rotateX: gridRotateX,
-                        rotateY: gridRotateY,
-                        translateZ: "-100px"
-                    }}
-                    className="absolute inset-[-20%] origin-center opacity-20"
-                >
-                    <div className="w-full h-full bg-[linear-gradient(to_right,rgba(0,243,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,243,255,0.15)_1px,transparent_1px)] bg-[size:80px_80px]" />
-                </motion.div>
-
-                {[...Array(20)].map((_, i) => (
-                    <DepthParticle key={i} z={Math.random()} delay={i * 0.15} />
-                ))}
-
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,243,255,0.08)_0%,transparent_70%)]" />
-            </div>
+            {/* Minimal Overlay for Contrast */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,243,255,0.03)_0%,transparent_70%)] pointer-events-none" />
 
             <motion.div style={{ opacity: opacityFade }} className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
                 <div className="flex flex-col space-y-24 sm:space-y-32 lg:space-y-40">

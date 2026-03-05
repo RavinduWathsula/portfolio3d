@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMenu, FiX } from 'react-icons/fi'
 
 const Navbar = () => {
-    const navItems = ['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact']
+    const navItems = ['Home', 'About', 'Education', 'Certificates', 'Skills', 'Projects', 'Contact']
     const [activeSection, setActiveSection] = useState('home')
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
