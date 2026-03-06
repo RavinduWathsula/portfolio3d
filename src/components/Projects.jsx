@@ -164,12 +164,9 @@ const Projects = () => {
                             <span className="text-xs font-black uppercase tracking-[1em] text-neon-blue">Selected Works</span>
                         </motion.div>
                         <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none overflow-visible py-2">
-                            FEATURED <br /> <span className="text-neon-blue neon-text italic pr-4">ENGINEERING&nbsp;</span>
+                            FEATURED <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-4">ENGINEERING&nbsp;</span>
                         </h2>
                     </div>
-                    <p className="text-gray-400 max-w-sm font-medium text-lg leading-relaxed border-l-2 border-neon-blue/20 pl-8">
-                        Architecting robust digital solutions with specialized focus on system performance and aesthetic precision.
-                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -185,7 +182,7 @@ const Projects = () => {
                     viewport={{ once: false }}
                     className="mt-24 p-8 sm:p-12 bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[2.5rem] flex flex-col items-center justify-center relative overflow-hidden group shadow-[0_10px_30px_-10px_rgba(0,243,255,0.05)] hover:border-neon-blue/40 transition-all duration-500"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/5 via-transparent to-neon-purple/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-linear-to-br from-neon-blue/5 via-transparent to-neon-purple/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
 
                     <div className="flex items-center gap-4 mb-10 w-full justify-center relative z-10">
                         <Github className="text-white group-hover:text-neon-blue transition-colors duration-500" size={36} />
@@ -244,7 +241,7 @@ const Projects = () => {
                 >
                     <button className="group relative px-10 py-5 bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl hover:border-neon-blue/50 transition-all">
                         <span className="relative z-10 font-black text-sm uppercase tracking-[0.3em] text-gray-400 group-hover:text-white transition-colors">Explore All Deployments</span>
-                        <div className="absolute inset-0 bg-neon-blue/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500" />
+                        <div className="absolute inset-0 bg-neon-blue/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     </button>
                 </motion.div>
             </div>

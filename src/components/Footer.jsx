@@ -1,94 +1,117 @@
 import { motion } from 'framer-motion'
-import {
-    SiGithub, SiLinkedin,
-    SiReact, SiTailwindcss, SiFramer
-} from 'react-icons/si'
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 import { FaTwitter } from 'react-icons/fa'
+import { ArrowRight } from 'lucide-react'
+import { useRef, useState } from 'react'
 
 const Footer = () => {
+    const socialLinks = [
+        { icon: SiGithub, href: 'https://github.com/RavinduWathsula' },
+        { icon: SiLinkedin, href: 'https://www.linkedin.com/in/ravindu-wathsula-75265333a' },
+        { icon: FaTwitter, href: '#' },
+    ]
+
+    const cardRef = useRef(null)
+    const [rotateX, setRotateX] = useState(0)
+    const [rotateY, setRotateY] = useState(0)
+    const [isHovered, setIsHovered] = useState(false)
+
+    const handleMouseMove = (e) => {
+        if (!cardRef.current) return
+        const rect = cardRef.current.getBoundingClientRect()
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+        const centerX = rect.width / 2
+        const centerY = rect.height / 2
+        setRotateX((y - centerY) / 10)
+        setRotateY(-(x - centerX) / 10)
+    }
+
+    const handleMouseLeave = () => {
+        setRotateX(0)
+        setRotateY(0)
+        setIsHovered(false)
+    }
+
     return (
-        <footer className="relative py-12 overflow-hidden border-t border-white/5 bg-transparent">
-            {/* Immersive Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(0,243,255,0.03)_0%,transparent_60%)] pointer-events-none" />
+        <footer className="relative bg-[#020205] pt-24 pb-12 overflow-hidden">
+            {/* Internal Digital Particles for Footer Background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(0,243,255,0.05)_1px,transparent_0)] bg-[size:16px_16px] pointer-events-none" />
+            {/* Background Grid */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,243,255,0.05)_0%,transparent_40%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-50" />
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-                {/* Brand / Logo Area */}
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+                {/* Call to Action Section */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    ref={cardRef}
+                    onMouseMove={handleMouseMove}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={handleMouseLeave}
+                    whileTap={{ scale: 0.98, rotateX: 0, rotateY: 0 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false }}
-                    className="flex flex-col items-center md:items-start gap-2"
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                    style={{
+                        rotateX,
+                        rotateY,
+                        perspective: 1000,
+                        transformStyle: "preserve-3d"
+                    }}
+                    className="relative max-w-4xl mx-auto group cursor-pointer text-center mb-24"
                 >
-                    <div className="text-2xl font-black text-white tracking-tighter">
-                        RAVINDU<span className="text-neon-blue">.</span>W
-                    </div>
-                    <p className="text-xs font-mono text-gray-500 uppercase tracking-widest">
-                        Digital Experience Engineer
-                    </p>
-                </motion.div>
+                    {/* Interactive Glow Pulse */}
+                    <motion.div
+                        animate={isHovered ? { opacity: [0.3, 0.6, 0.3] } : { opacity: 0 }}
+                        className="absolute -inset-4 bg-gradient-to-r from-neon-blue/30 to-neon-purple/30 blur-2xl rounded-[3rem] transition-opacity duration-1000"
+                    />
+                    {/* Inner card content wrapper */}
+                    <div className="relative bg-[#ffffff03] backdrop-blur-3xl border border-white/10 rounded-[2.5rem] p-8 sm:p-12 overflow-hidden shadow-2xl group-hover:border-neon-blue/40 transition-all duration-500">
+                        {/* Internal Digital Particles */}
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(0,243,255,0.05)_1px,transparent_0)] bg-[size:16px_16px] pointer-events-none" />
 
-                {/* Social Links */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ delay: 0.1 }}
-                    className="flex items-center gap-4"
-                >
-                    {[
-                        { icon: SiGithub, color: '#ffffff', href: 'https://github.com/RavinduWathsula' },
-                        { icon: SiLinkedin, color: '#0077b5', href: 'https://www.linkedin.com/in/ravindu-wathsula-75265333a' },
-                        { icon: FaTwitter, color: '#1da1f2', href: '#' }
-                    ].map((Social, index) => (
-                        <motion.a
-                            key={index}
-                            href={Social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ y: -3, scale: 1.1 }}
-                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:border-neon-blue/40 transition-colors group relative"
-                        >
-                            <div className="absolute inset-0 rounded-xl blur-md opacity-0 group-hover:opacity-20 transition-opacity" style={{ backgroundColor: Social.color }} />
-                            <Social.icon size={18} className="relative z-10 group-hover:text-white transition-colors" style={{ color: "currentColor" }} />
-                        </motion.a>
-                    ))}
-                </motion.div>
-
-                {/* Built With Tech Stack */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ delay: 0.2 }}
-                    className="flex flex-col items-center md:items-end gap-2"
-                >
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">
-                        Engineered With
-                    </span>
-                    <div className="flex items-center gap-3">
-                        <SiReact className="text-[#61DAFB] opacity-70 hover:opacity-100 transition-opacity" size={16} />
-                        <SiTailwindcss className="text-[#06B6D4] opacity-70 hover:opacity-100 transition-opacity" size={16} />
-                        <SiFramer className="text-white opacity-70 hover:opacity-100 transition-opacity" size={16} />
+                        {/* Existing CTA Content */}
+                        <div className="relative z-10" style={{ transform: "translateZ(30px)" }}>
+                            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter mb-6">
+                                Have a project in mind?
+                            </h2>
+                            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                                I'm currently available for freelance work and open to discussing new projects. Let's build something amazing together.
+                            </p>
+                            <motion.a
+                                href="#contact"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple text-black font-black rounded-full transition-all hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] no-underline text-base tracking-tighter"
+                            >
+                                <span>GET IN TOUCH</span>
+                                <ArrowRight size={20} />
+                            </motion.a>
+                        </div>
                     </div>
                 </motion.div>
-            </div>
 
-            {/* Copyright Divider */}
-            <div className="max-w-7xl mx-auto px-6 mt-12 relative z-10">
-                <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: false }}
-                    className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-mono font-black uppercase tracking-widest text-white/20"
-                >
-                    <p>© {new Date().getFullYear()} Ravindu Wathsula. All Systems Operational.</p>
-                    <div className="flex gap-4">
-                        <a href="#" className="hover:text-neon-blue transition-colors">Privacy</a>
-                        <a href="#" className="hover:text-neon-blue transition-colors">Terms</a>
+                {/* Bottom Bar */}
+                <div className="border-t border-white/10 pt-12 flex flex-col sm:flex-row justify-between items-center gap-8">
+                    <div className="text-sm font-mono text-gray-500 text-center sm:text-left">
+                        © {new Date().getFullYear()} Ravindu Wathsula. All rights reserved.
                     </div>
-                </motion.div>
+                    <div className="flex items-center gap-5">
+                        {socialLinks.map((social, index) => (
+                            <motion.a
+                                key={index}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ y: -4, scale: 1.1, color: '#00f3ff' }}
+                                className="text-gray-400 transition-colors"
+                            >
+                                <social.icon size={22} />
+                            </motion.a>
+                        ))}
+                    </div>
+                </div>
             </div>
         </footer>
     )

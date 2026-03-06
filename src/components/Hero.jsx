@@ -30,7 +30,7 @@ const Hero = () => {
                         {/* Image Container */}
                         <div className="relative w-full h-full rounded-3xl overflow-hidden glass border border-white/20">
                             <img
-                                src="/profile.png"
+                                src="/profile01.jpg"
                                 alt="Profile"
                                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
                             />
@@ -63,7 +63,7 @@ const Hero = () => {
                             className="text-[clamp(2.5rem,10vw,5rem)] xl:text-[6rem] 2xl:text-[7rem] font-black tracking-tighter leading-[0.9] py-2"
                         >
                             ENGINEERING <br />
-                            <span className="text-neon-blue neon-text italic">AESTHETICS</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow animate-breathing bg-[length:200%_auto]">AESTHETICS</span>
                         </motion.h1>
                     </div>
 

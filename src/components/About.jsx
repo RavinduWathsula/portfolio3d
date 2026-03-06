@@ -197,16 +197,16 @@ const About = () => {
                                 className="space-y-6"
                             >
                                 <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-                                    Architecting the next <br /> generation of <span className="text-neon-blue font-italic">elite software</span> solutions.
+                                    Architecting the next <br /> generation of <span className="text-neon-blue font-italic">ELITE SOFTWARE</span> solutions.
                                 </h3>
                                 <div className="h-1.5 w-24 sm:w-32 bg-gradient-to-r from-neon-blue via-neon-purple to-transparent rounded-full" />
                             </motion.div>
 
                             <div className="space-y-8 max-w-2xl">
                                 <LineReveal delay={0.2} text="I’m a passionate undergraduate software developer from KDU specializing in architectural precision and modern engineering." />
-                                <LineReveal delay={0.4} text="I focus on building robust, high-performance systems that bridge complex logic with intuitive digital experiences." />
-                                <LineReveal delay={0.6} text="From designing secure backend structures to crafting cinematic frontend interactions, I deliver elite software products." />
-                                <LineReveal delay={0.8} text="I am constantly learning and evolving my craft to solve real-world problems with scalable and innovative solutions." />
+                                <LineReveal delay={0.4} text="I focus on building robust  high performance systems that bridge complex logic with intuitive digital experiences." />
+                                <LineReveal delay={0.6} text="From designing secure backend structures to crafting cinematic frontend interactions  I deliver elite software products." />
+                                <LineReveal delay={0.8} text="I am constantly learning and evolving my craft to solve real world problems with scalable and innovative solutions." />
                             </div>
                         </div>
 
