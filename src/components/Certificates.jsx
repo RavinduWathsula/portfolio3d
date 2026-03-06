@@ -221,7 +221,7 @@ const Certificates = () => {
                         <span className="text-[10px] lg:text-xs font-black uppercase tracking-[1.5em] text-neon-blue/60">Professional Credentials</span>
                     </motion.div>
                     <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none uppercase overflow-visible py-4">
-                        Verified <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-4">Expertise</span>
+                        Verified <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-4">Expertise&nbsp;</span>
                     </h2>
                 </div>
 

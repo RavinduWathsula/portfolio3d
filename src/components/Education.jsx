@@ -168,8 +168,8 @@ const Education = () => {
                         className="text-center space-y-6"
                     >
                         <span className="text-xs font-black uppercase tracking-[1.2em] text-neon-blue animate-pulse">Lifetime Education</span>
-                        <h2 className="text-5xl sm:text-7xl md:text-9xl font-black text-white leading-[0.85] tracking-tighter">
-                            ACADEMIC <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow bg-[length:200%_auto] py-4 inline-block">JOURNEY</span>
+                        <h2 className="text-5xl sm:text-7xl md:text-9xl font-black text-white leading-[0.85] tracking-tighter overflow-visible pb-4">
+                            ACADEMIC <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow bg-[length:200%_auto] py-4 pr-4 inline-block">JOURNEY&nbsp;</span>
                         </h2>
                     </motion.div>
                 </div>

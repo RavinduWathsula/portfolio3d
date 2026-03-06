@@ -1,6 +1,10 @@
+import React from 'react'
 import { motion } from 'framer-motion'
 import { useState, useRef } from 'react'
-import { ExternalLink, Github, Code2, Monitor, ArrowUpRight } from 'lucide-react'
+import { ExternalLink, Github, Code2, Monitor, ArrowUpRight, Calendar as CalendarIcon } from 'lucide-react'
+import { GitHubCalendar } from 'react-github-calendar'
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 const ProjectCard = ({ project, index }) => {
     const cardRef = useRef(null)
@@ -67,9 +71,25 @@ const ProjectCard = ({ project, index }) => {
                         </div>
                     </div>
 
-                    {/* Icon Base */}
-                    <div className="w-full h-full flex items-center justify-center opacity-20 filter grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-110">
-                        <span className="text-8xl">{project.emoji}</span>
+                    {/* Media Base */}
+                    <div className="absolute inset-0 w-full h-full transition-transform duration-1000 group-hover:scale-110">
+                        {project.video ? (
+                            <video
+                                src={project.video}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="w-full h-full object-cover opacity-40 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700"
+                            />
+                        ) : (
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover opacity-40 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700"
+                            />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/40 to-transparent" />
                     </div>
                 </div>
 
@@ -100,30 +120,32 @@ const ProjectCard = ({ project, index }) => {
 }
 
 const Projects = () => {
+    const [githubYear, setGithubYear] = useState(new Date().getFullYear())
+
     const projects = [
         {
-            title: "Interactive 3D Dashboard",
-            description: "A high-performance monitoring tool with real-time data visualization using Three.js and WebGL. Features neural-mesh feedback loops.",
-            tags: ["React", "Three.js", "GSAP", "Socket.io"],
-            emoji: "🛰️"
+            title: "Smart Shopping Cart",
+            description: "An intelligent e-commerce solution developed as a group project. Features real-time cart management, secure checkout, and dynamic inventory synchronization.",
+            tags: ["React", "Node.js", "MongoDB", "Express"],
+            image: "/assets/projects/shopping_cart.png"
         },
         {
-            title: "AI E-commerce Platform",
-            description: "Next-gen shopping experience with personalized recommendations using TensorFlow.js and headless commerce architecture.",
-            tags: ["Next.js", "Python", "Tailwind", "AI"],
-            emoji: "🛒"
+            title: "Online Vehicle Rental System",
+            description: "A comprehensive web application for managing vehicle rentals, featuring real-time availability tracking, user dashboards, and secure booking processing.",
+            tags: ["React", "Tailwind CSS", "Firebase", "Stripe"],
+            image: "/assets/projects/vehicle_rental.png"
         },
         {
-            title: "Blockchain Supply Chain",
-            description: "Decentralized tracking system for industrial assets with smart contract integration and real-time ledger auditing.",
-            tags: ["Solidity", "React", "Node.js", "Web3"],
-            emoji: "⛓️"
+            title: "Interactive 3D Portfolio",
+            description: "This very website! A high-performance, immersive personal portfolio featuring 3D elements, smooth scroll animations, and a cyberpunk neon aesthetic.",
+            tags: ["React", "Three.js", "Vite", "Framer Motion"],
+            video: "/assets/projects/portfolio.mp4"
         },
         {
-            title: "Cloud Infrastructure Manager",
-            description: "Automated provisioning and monitoring tool for large-scale enterprise deployments with real-time scaling alerts.",
-            tags: ["Go", "AWS", "Terraform", "Docker"],
-            emoji: "☁️"
+            title: "Vehicle Parts Finder [Ongoing]",
+            description: "An ongoing project developing a specialized search engine and marketplace for locating, comparing, and procuring specific automotive components globally.",
+            tags: ["Next.js", "PostgreSQL", "Prisma", "Tailwind"],
+            image: "/assets/projects/vehicle_parts.png"
         }
     ]
 
@@ -141,8 +163,8 @@ const Projects = () => {
                             <div className="w-12 h-[1px] bg-neon-blue" />
                             <span className="text-xs font-black uppercase tracking-[1em] text-neon-blue">Selected Works</span>
                         </motion.div>
-                        <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none">
-                            FEATURED <br /> <span className="text-neon-blue neon-text italic">ENGINEERING</span>
+                        <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none overflow-visible py-2">
+                            FEATURED <br /> <span className="text-neon-blue neon-text italic pr-4">ENGINEERING&nbsp;</span>
                         </h2>
                     </div>
                     <p className="text-gray-400 max-w-sm font-medium text-lg leading-relaxed border-l-2 border-neon-blue/20 pl-8">
@@ -155,6 +177,65 @@ const Projects = () => {
                         <ProjectCard key={index} project={project} index={index} />
                     ))}
                 </div>
+
+                {/* GitHub Contribution Calendar */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    className="mt-24 p-8 sm:p-12 bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[2.5rem] flex flex-col items-center justify-center relative overflow-hidden group shadow-[0_10px_30px_-10px_rgba(0,243,255,0.05)] hover:border-neon-blue/40 transition-all duration-500"
+                >
+                    <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/5 via-transparent to-neon-purple/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+
+                    <div className="flex items-center gap-4 mb-10 w-full justify-center relative z-10">
+                        <Github className="text-white group-hover:text-neon-blue transition-colors duration-500" size={36} />
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tighter uppercase">
+                            Open Source <span className="text-neon-blue italic pr-2">Progress</span>
+                        </h3>
+                    </div>
+
+                    <div className="w-full overflow-visible flex flex-col items-center justify-center relative z-10 gap-6">
+                        {/* Year Selector UI */}
+                        <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-4 p-1.5 rounded-2xl bg-black/40 border border-white/5 backdrop-blur-md">
+                            <CalendarIcon size={16} className="text-gray-500 mx-2" />
+                            {[2023, 2024, 2025, 2026].map((year) => (
+                                <button
+                                    key={year}
+                                    onClick={() => setGithubYear(year)}
+                                    className={`px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${githubYear === year
+                                        ? 'bg-neon-blue text-black shadow-[0_0_15px_rgba(0,243,255,0.4)]'
+                                        : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    {year}
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="p-4 sm:p-6 rounded-2xl bg-black/60 border border-white/5 w-full overflow-x-auto flex justify-center custom-scrollbar relative">
+                            <div className="min-w-max">
+                                <GitHubCalendar
+                                    username="RavinduWathsula"
+                                    year={githubYear}
+                                    colorScheme="dark"
+                                    blockSize={14}
+                                    blockMargin={6}
+                                    fontSize={12}
+                                    renderBlock={(block, activity) =>
+                                        React.cloneElement(block, {
+                                            'data-tooltip-id': 'github-tooltip',
+                                            'data-tooltip-content': `${activity.count} contribution${activity.count !== 1 ? 's' : ''} on ${activity.date}`,
+                                        })
+                                    }
+                                    theme={{
+                                        dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#00f3ff'],
+                                    }}
+                                />
+                                <Tooltip id="github-tooltip" style={{ backgroundColor: '#1a1a2e', color: '#00f3ff', borderRadius: '10px', fontSize: '12px', fontWeight: 'bold', border: '1px solid rgba(0,243,255,0.2)' }} />
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0 }}

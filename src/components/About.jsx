@@ -181,9 +181,9 @@ const About = () => {
                             <span className="text-[11px] font-black uppercase tracking-[0.6em] text-neon-blue">Advanced Digital Ethos</span>
                         </motion.div>
 
-                        <h2 className="text-[clamp(3rem,10vw,9rem)] font-black text-white leading-[0.8] tracking-tight drop-shadow-[0_20px_80px_rgba(0,0,0,0.8)] pb-4 pr-6">
+                        <h2 className="text-[clamp(3rem,10vw,9rem)] font-black text-white leading-[0.8] tracking-tight drop-shadow-[0_20px_80px_rgba(0,0,0,0.8)] pb-4 pr-6 overflow-visible">
                             ABOUT <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow animate-breathing bg-[length:200%_auto] inline-block py-2">VISION</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow animate-breathing bg-[length:200%_auto] inline-block py-2 pr-4">VISION&nbsp;</span>
                         </h2>
                     </motion.div>
 
