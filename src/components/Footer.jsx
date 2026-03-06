@@ -37,8 +37,8 @@ const Footer = () => {
                     className="flex items-center gap-4"
                 >
                     {[
-                        { icon: SiGithub, color: '#ffffff', href: '#' },
-                        { icon: SiLinkedin, color: '#0077b5', href: '#' },
+                        { icon: SiGithub, color: '#ffffff', href: 'https://github.com/RavinduWathsula' },
+                        { icon: SiLinkedin, color: '#0077b5', href: 'https://www.linkedin.com/in/ravindu-wathsula-75265333a' },
                         { icon: FaTwitter, color: '#1da1f2', href: '#' }
                     ].map((Social, index) => (
                         <motion.a

@@ -45,7 +45,7 @@ const Navbar = () => {
                 <div className="hidden md:flex gap-4 pr-6 border-r border-white/10">
                     <motion.a
                         whileHover={{ scale: 1.2, color: 'var(--neon-blue)' }}
-                        href="https://github.com/yourusername"
+                        href="https://github.com/RavinduWathsula"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 transition-colors"
@@ -54,7 +54,7 @@ const Navbar = () => {
                     </motion.a>
                     <motion.a
                         whileHover={{ scale: 1.2, color: 'var(--neon-blue)' }}
-                        href="https://linkedin.com/in/yourusername"
+                        href="https://www.linkedin.com/in/ravindu-wathsula-75265333a"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 transition-colors"
@@ -123,10 +123,10 @@ const Navbar = () => {
                                 )
                             })}
                             <div className="flex gap-6 pt-4 border-t border-white/10">
-                                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
+                                <a href="https://github.com/RavinduWathsula" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
                                     <FiGithub size={20} />
                                 </a>
-                                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
+                                <a href="https://www.linkedin.com/in/ravindu-wathsula-75265333a" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
                                     <FiLinkedin size={20} />
                                 </a>
                             </div>

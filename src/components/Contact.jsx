@@ -32,9 +32,12 @@ const Contact = () => {
                         <ContactInfo icon={FiMapPin} title="Location" value="San Francisco, CA" />
 
                         <div className="flex gap-4 mt-12">
-                            {[FiLinkedin, FiGithub, FiTwitter].map((Icon, i) => (
-                                <a key={i} href="#" className="w-10 h-10 glass flex items-center justify-center rounded-lg hover:text-neon-blue transition-colors">
-                                    <Icon size={18} />
+                            {[
+                                { icon: FiLinkedin, href: 'https://www.linkedin.com/in/ravindu-wathsula-75265333a' },
+                                { icon: FiGithub, href: 'https://github.com/RavinduWathsula' },
+                            ].map((social, i) => (
+                                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass flex items-center justify-center rounded-lg hover:text-neon-blue transition-colors">
+                                    <social.icon size={18} />
                                 </a>
                             ))}
                         </div>

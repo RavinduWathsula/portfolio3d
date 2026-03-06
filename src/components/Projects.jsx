@@ -228,7 +228,7 @@ const Projects = () => {
                                         })
                                     }
                                     theme={{
-                                        dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#00f3ff'],
+                                        dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
                                     }}
                                 />
                                 <Tooltip id="github-tooltip" style={{ backgroundColor: '#1a1a2e', color: '#00f3ff', borderRadius: '10px', fontSize: '12px', fontWeight: 'bold', border: '1px solid rgba(0,243,255,0.2)' }} />
