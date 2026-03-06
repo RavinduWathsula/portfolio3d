@@ -27,7 +27,7 @@ const CertificateCard = ({ cert, index, onClick }) => {
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
             className="perspective-1000"
         >
@@ -45,44 +45,48 @@ const CertificateCard = ({ cert, index, onClick }) => {
                 className="group relative cursor-pointer h-full"
             >
                 {/* Advanced Holographic Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-neon-blue/30 via-neon-purple/30 to-neon-blue/30 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-neon-blue/30 via-neon-purple/30 to-neon-blue/30 rounded-[1.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
-                <div className="relative bg-black/60 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-6 lg:p-8 pb-12 overflow-hidden group-hover:border-neon-blue/40 transition-all duration-500 shadow-2xl h-full flex flex-col min-h-[420px]">
+                <div className="relative bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[1.2rem] shadow-[inset_0_1px_10px_rgba(255,255,255,0.05),0_10px_30px_-10px_rgba(0,243,255,0.1)] p-4 lg:p-6 overflow-hidden group-hover:border-neon-blue/40 transition-all duration-500 h-full flex flex-col min-h-[300px]">
+                    {/* Creative Background Texture and Gradients */}
+                    <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-transparent to-neon-purple/10 opacity-60"></div>
+
                     {/* Cyber-Corners Decorative Elements */}
-                    <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-neon-blue/30 rounded-tl-[2rem] group-hover:border-neon-blue transition-colors duration-500" />
-                    <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-neon-purple/30 rounded-br-[2rem] group-hover:border-neon-purple transition-colors duration-500" />
+                    <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-neon-blue/30 rounded-tl-[1.2rem] group-hover:border-neon-blue transition-colors duration-500" />
+                    <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-neon-purple/30 rounded-br-[1.2rem] group-hover:border-neon-purple transition-colors duration-500" />
 
                     {/* Background Holographic Watermark */}
-                    <div className="absolute -right-6 -bottom-6 opacity-[0.02] group-hover:opacity-[0.06] transition-opacity duration-700 pointer-events-none">
-                        <Award size={180} className="text-white" />
+                    <div className="absolute -right-4 -bottom-4 opacity-[0.02] group-hover:opacity-[0.06] transition-opacity duration-700 pointer-events-none">
+                        <Award size={140} className="text-white" />
                     </div>
 
                     {/* Animated Grid Background */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.02)_1px,transparent_0)] bg-[size:24px_24px] opacity-50" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.02)_1px,transparent_0)] bg-[size:16px_16px] opacity-50" />
                     <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                    <div className="relative z-10 space-y-4 flex-1 flex flex-col" style={{ transform: "translateZ(50px)" }}>
-                        <div className="flex justify-between items-start">
-                            <div className="relative">
-                                <div className="absolute -inset-2 bg-neon-blue/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <div className="relative w-12 h-12 rounded-xl bg-black/80 border border-white/10 p-2 flex items-center justify-center group-hover:border-neon-blue/40 transition-all overflow-hidden">
+                    <div className="relative z-10 space-y-4 flex-1 flex flex-col" style={{ transform: "translateZ(30px)" }}>
+                        <div className="flex justify-between items-start gap-2">
+                            <div className="relative shrink-0">
+                                <div className="absolute -inset-1.5 bg-neon-blue/20 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="relative w-12 h-12 rounded-lg bg-black/80 border border-white/10 p-2 flex items-center justify-center group-hover:border-neon-blue/40 transition-all overflow-hidden">
                                     <img src={cert.logo} alt={cert.issuer} className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
                                 </div>
                             </div>
-                            <div className="flex flex-col items-end gap-1.5 text-right">
-                                <span className="px-2.5 py-1 rounded-full bg-neon-purple/10 border border-neon-purple/20 text-[7px] font-black text-neon-purple uppercase tracking-[0.2em]">
+                            <div className="flex flex-col items-end gap-1.5 text-right min-w-0 pl-1">
+                                <div className="inline-block px-2 py-0.5 rounded-md bg-neon-purple/10 border border-neon-purple/20 text-[9px] font-black text-neon-purple uppercase tracking-widest leading-tight whitespace-normal">
                                     {cert.issuer}
-                                </span>
-                                <div className="flex items-center gap-1 text-neon-blue/40">
-                                    <ShieldCheck size={9} />
-                                    <span className="text-[6px] font-black uppercase tracking-widest leading-none opacity-80">VERIFIED: {cert.id.split('-').pop()}</span>
+                                </div>
+                                <div className="flex items-center gap-1 text-neon-blue/40 mt-0.5 flex-wrap justify-end">
+                                    <ShieldCheck size={10} className="shrink-0" />
+                                    <span className="text-[8px] font-black uppercase tracking-widest leading-tight opacity-80 whitespace-normal">VALID: {cert.id.split('-').pop()}</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="space-y-3.5 flex-1">
+                        <div className="space-y-3 flex-1 mt-2">
                             <div>
-                                <h3 className="text-lg font-black text-white group-hover:text-neon-blue transition-colors duration-300 leading-tight tracking-tight">
+                                <h3 className="text-sm sm:text-base font-black text-white group-hover:text-neon-blue transition-colors duration-300 leading-tight tracking-tight line-clamp-2">
                                     {cert.title}
                                 </h3>
                                 <div className="flex items-center gap-2 mt-1.5">
@@ -94,39 +98,39 @@ const CertificateCard = ({ cert, index, onClick }) => {
                             </div>
 
                             {/* Streamlined Achievement Summary */}
-                            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05] space-y-2 group-hover:bg-white/[0.05] transition-all duration-500">
-                                <p className="text-gray-400 text-[9px] leading-relaxed font-medium italic">
+                            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] space-y-2 group-hover:bg-white/[0.04] transition-all duration-500 mt-3">
+                                <p className="text-gray-400 text-[9px] leading-relaxed font-medium italic line-clamp-3">
                                     "{cert.summary}"
                                 </p>
                                 <div className="flex items-center justify-between pt-2 border-t border-white/5">
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 rounded-full bg-neon-blue/50 animate-pulse" />
-                                        <span className="text-[6.5px] font-black text-neon-blue/60 uppercase tracking-widest">Protocol Efficiency</span>
+                                        <span className="text-[8px] font-black text-neon-blue/60 uppercase tracking-widest">Protocol</span>
                                     </div>
-                                    <span className="text-[7.5px] font-black text-white px-2 py-0.5 rounded-md bg-white/5 border border-white/5">{cert.metric}</span>
+                                    <span className="text-[9px] font-black text-white px-2 py-0.5 rounded-md bg-white/5 border border-white/5">{cert.metric}</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="pt-4 flex items-center justify-between mt-auto border-t border-white/5">
-                            <div className="flex flex-wrap gap-1.5">
-                                {cert.tech.map((t, i) => (
-                                    <span key={i} className="text-[6px] font-black text-gray-500 border border-white/10 px-2 py-1 rounded-md uppercase tracking-wider bg-black/40 group-hover:text-neon-blue group-hover:border-neon-blue/30 transition-all">
+                            <div className="flex flex-wrap gap-1.5 w-[75%]">
+                                {cert.tech.slice(0, 3).map((t, i) => (
+                                    <span key={i} className="text-[8px] font-black text-gray-500 border border-white/10 px-2 py-1 rounded-md uppercase tracking-wider bg-black/40 group-hover:text-neon-blue group-hover:border-neon-blue/30 transition-all">
                                         {t}
                                     </span>
                                 ))}
                             </div>
                             <motion.div
-                                className="w-9 h-9 rounded-xl border border-neon-blue/20 flex items-center justify-center text-neon-blue bg-neon-blue/5 group-hover:bg-neon-blue group-hover:text-black transition-all duration-500 shadow-[0_0_15px_rgba(0,243,255,0)] group-hover:shadow-[0_0_15px_rgba(0,243,255,0.3)]"
+                                className="w-8 h-8 shrink-0 rounded-lg border border-neon-blue/20 flex items-center justify-center text-neon-blue bg-neon-blue/5 group-hover:bg-neon-blue group-hover:text-black transition-all duration-500 shadow-[0_0_10px_rgba(0,243,255,0)] group-hover:shadow-[0_0_10px_rgba(0,243,255,0.3)]"
                                 whileHover={{ scale: 1.1 }}
                             >
-                                <ExternalLink size={16} />
+                                <ExternalLink size={14} />
                             </motion.div>
                         </div>
                     </div>
 
                     {/* Enhanced Scanning Line */}
-                    <div className="absolute top-0 left-0 w-full h-[1.5px] bg-gradient-to-r from-transparent via-neon-blue to-transparent -translate-y-full group-hover:animate-scan" />
+                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-blue to-transparent -translate-y-full group-hover:animate-scan" />
                 </div>
             </motion.div>
         </motion.div>
@@ -210,20 +214,20 @@ const Certificates = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="flex items-center gap-6"
                     >
                         <div className="w-12 lg:w-16 h-[2px] bg-gradient-to-r from-neon-blue to-transparent" />
                         <span className="text-[10px] lg:text-xs font-black uppercase tracking-[1.5em] text-neon-blue/60">Professional Credentials</span>
                     </motion.div>
-                    <h2 className="text-4xl lg:text-6xl font-black text-white tracking-tighter leading-none uppercase overflow-visible py-4">
-                        Verified <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple via-neon-blue to-neon-purple italic">Expertise</span>
+                    <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none uppercase overflow-visible py-4">
+                        Verified <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-4">Expertise</span>
                     </h2>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
+                <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
                     {certificates.map((cert, index) => (
-                        <div key={index} className="w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.33%-2.6rem)] min-w-[320px]">
+                        <div key={index} className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(25%-1.5rem)] min-w-[280px] max-w-[360px]">
                             <CertificateCard
                                 cert={cert}
                                 index={index}

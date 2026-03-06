@@ -9,6 +9,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Background3D from './components/Background3D'
+import Footer from './components/Footer'
 
 function App() {
   const { scrollYProgress } = useScroll()
@@ -35,10 +36,8 @@ function App() {
         <Projects />
         <Contact />
       </main>
-      <footer className="py-10 text-center opacity-50 text-sm">
-        © {new Date().getFullYear()} Professional Portfolio. All rights reserved.
-      </footer>
-    </div>
+      <Footer />
+    </div >
   )
 }
 

@@ -9,7 +9,7 @@ const LineReveal = ({ text, delay = 0 }) => {
                 initial={{ y: "100%" }}
                 whileInView={{ y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 className="text-lg md:text-xl text-gray-400 leading-relaxed font-medium"
             >
                 {text}

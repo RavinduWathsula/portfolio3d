@@ -17,7 +17,7 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="relative group flex justify-center lg:justify-end order-2 lg:order-1"
                 >
@@ -50,7 +50,7 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="text-center lg:text-left order-1 lg:order-2"
                 >
@@ -58,7 +58,7 @@ const Hero = () => {
                         <motion.h1
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                             className="text-[clamp(2.5rem,10vw,5rem)] xl:text-[6rem] 2xl:text-[7rem] font-black tracking-tighter leading-[0.9] py-2"
                         >
@@ -70,7 +70,7 @@ const Hero = () => {
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         transition={{ duration: 1, delay: 0.7 }}
                         className="text-sm sm:text-base md:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 md:mb-10 leading-relaxed font-medium"
                     >

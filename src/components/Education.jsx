@@ -41,7 +41,7 @@ const EducationCard = ({ item, index }) => {
                     whileTap={{ scale: 0.98, rotateX: 0, rotateY: 0 }}
                     initial={{ opacity: 0, x: isEven ? -100 : 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     style={{
                         rotateX,

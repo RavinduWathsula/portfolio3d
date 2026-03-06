@@ -27,7 +27,7 @@ const ProjectCard = ({ project, index }) => {
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
             className="perspective-1000"
         >
@@ -135,7 +135,7 @@ const Projects = () => {
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             className="flex items-center gap-4"
                         >
                             <div className="w-12 h-[1px] bg-neon-blue" />
