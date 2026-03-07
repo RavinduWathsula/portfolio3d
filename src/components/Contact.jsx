@@ -53,7 +53,7 @@ const ModernInput = ({ label, type = 'text', placeholder, value, onChange, icon:
                             onChange={onChange}
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)}
-                            className={`w-full bg-transparent text-white placeholder-white/30 px-4 py-3 focus:outline-none text-sm font-medium resize-none ${Icon ? 'pl-12' : ''}`}
+                            className={`w-full bg-transparent text-white placeholder-white/30 px-4 py-3 focus:outline-none text-sm font-medium resize-none break-all min-w-0 ${Icon ? 'pl-12' : ''}`}
                         />
                     ) : (
                         <input
@@ -64,7 +64,7 @@ const ModernInput = ({ label, type = 'text', placeholder, value, onChange, icon:
                             onChange={onChange}
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)}
-                            className={`w-full bg-transparent text-white placeholder-white/30 px-4 py-3 focus:outline-none text-sm font-medium ${Icon ? 'pl-12' : ''}`}
+                            className={`w-full bg-transparent text-white placeholder-white/30 px-4 py-3 focus:outline-none text-sm font-medium break-all min-w-0 ${Icon ? 'pl-12' : ''}`}
                         />
                     )}
                 </div>
@@ -74,7 +74,7 @@ const ModernInput = ({ label, type = 'text', placeholder, value, onChange, icon:
 };
 
 /* ─── Contact Info Card ─── */
-const InfoCard = ({ icon: Icon, title, value, href, index }) => {
+const InfoCard = ({ icon: IconComponent, title, value, href, index }) => {
     const Tag = href ? 'a' : 'div';
     const linkProps = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : {};
 
@@ -91,7 +91,7 @@ const InfoCard = ({ icon: Icon, title, value, href, index }) => {
             >
                 <div className="flex items-center gap-4">
                     <div className="shrink-0 w-12 h-12 rounded-lg bg-linear-to-br from-neon-blue/10 to-neon-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Icon size={20} className="text-neon-blue" />
+                        {IconComponent && <IconComponent size={20} className="text-neon-blue" />}
                     </div>
                     <div className="flex-1">
                         <p className="text-xs font-black text-gray-500 uppercase tracking-wide mb-1">

@@ -96,12 +96,12 @@ const ProjectCard = ({ project, index }) => {
                 <div className="p-8 space-y-6" style={{ transform: "translateZ(40px)" }}>
                     <div className="space-y-3">
                         <div className="flex justify-between items-start">
-                            <h3 className="text-2xl font-black text-white tracking-tighter group-hover:text-neon-blue transition-colors">
+                            <h3 className="text-2xl font-black text-white tracking-tighter group-hover:text-neon-blue transition-colors break-all min-w-0">
                                 {project.title}
                             </h3>
                             <ArrowUpRight className="text-white/20 group-hover:text-neon-blue transition-colors" size={20} />
                         </div>
-                        <p className="text-gray-450 text-sm font-medium leading-relaxed line-clamp-2">
+                        <p className="text-gray-400 text-sm font-medium leading-relaxed break-all min-w-0">
                             {project.description}
                         </p>
                     </div>
@@ -139,7 +139,7 @@ const Projects = () => {
             title: "Interactive 3D Portfolio",
             description: "This very website! A high-performance, immersive personal portfolio featuring 3D elements, smooth scroll animations, and a cyberpunk neon aesthetic.",
             tags: ["React", "Three.js", "Vite", "Framer Motion"],
-            video: "/assets/projects/portfolio.mp4"
+            video: "/assets/projects/Screen Recording 2026-03-06 230704.mp4"
         },
         {
             title: "Vehicle Parts Finder [Ongoing]",

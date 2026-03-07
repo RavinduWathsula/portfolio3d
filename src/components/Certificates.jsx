@@ -45,12 +45,12 @@ const CertificateCard = ({ cert, index, onClick }) => {
                 className="group relative cursor-pointer h-full"
             >
                 {/* Advanced Holographic Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-neon-blue/30 via-neon-purple/30 to-neon-blue/30 rounded-[1.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute -inset-1 bg-linear-to-r from-neon-blue/30 via-neon-purple/30 to-neon-blue/30 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
-                <div className="relative bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[1.2rem] shadow-[inset_0_1px_10px_rgba(255,255,255,0.05),0_10px_30px_-10px_rgba(0,243,255,0.1)] p-4 lg:p-6 overflow-hidden group-hover:border-neon-blue/40 transition-all duration-500 h-full flex flex-col min-h-[300px]">
+                <div className="relative bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[1.2rem] shadow-[inset_0_1px_10px_rgba(255,255,255,0.05),0_10px_30px_-10px_rgba(0,243,255,0.1)] p-4 lg:p-6 overflow-hidden group-hover:border-neon-blue/40 transition-all duration-500 h-full flex flex-col min-h-75">
                     {/* Creative Background Texture and Gradients */}
                     <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }}></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-transparent to-neon-purple/10 opacity-60"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-neon-blue/10 via-transparent to-neon-purple/10 opacity-60"></div>
 
                     {/* Cyber-Corners Decorative Elements */}
                     <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-neon-blue/30 rounded-tl-[1.2rem] group-hover:border-neon-blue transition-colors duration-500" />
@@ -62,8 +62,8 @@ const CertificateCard = ({ cert, index, onClick }) => {
                     </div>
 
                     {/* Animated Grid Background */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.02)_1px,transparent_0)] bg-[size:16px_16px] opacity-50" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(255,255,255,0.02)_1px,transparent_0)] bg-size-[16px_16px] opacity-50" />
+                    <div className="absolute inset-0 bg-linear-to-br from-neon-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                     <div className="relative z-10 space-y-4 flex-1 flex flex-col" style={{ transform: "translateZ(30px)" }}>
                         <div className="flex justify-between items-start gap-2">
@@ -98,7 +98,7 @@ const CertificateCard = ({ cert, index, onClick }) => {
                             </div>
 
                             {/* Streamlined Achievement Summary */}
-                            <div className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] space-y-2 group-hover:bg-white/[0.04] transition-all duration-500 mt-3">
+                            <div className="p-3 rounded-xl bg-white/2 border border-white/5 space-y-2 group-hover:bg-white/4 transition-all duration-500 mt-3">
                                 <p className="text-gray-400 text-[9px] leading-relaxed font-medium italic line-clamp-3">
                                     "{cert.summary}"
                                 </p>
@@ -130,7 +130,7 @@ const CertificateCard = ({ cert, index, onClick }) => {
                     </div>
 
                     {/* Enhanced Scanning Line */}
-                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-blue to-transparent -translate-y-full group-hover:animate-scan" />
+                    <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-neon-blue to-transparent -translate-y-full group-hover:animate-scan" />
                 </div>
             </motion.div>
         </motion.div>
@@ -217,17 +217,17 @@ const Certificates = () => {
                         viewport={{ once: false }}
                         className="flex items-center gap-6"
                     >
-                        <div className="w-12 lg:w-16 h-[2px] bg-gradient-to-r from-neon-blue to-transparent" />
+                        <div className="w-12 lg:w-16 h-0.5 bg-linear-to-r from-neon-blue to-transparent" />
                         <span className="text-[10px] lg:text-xs font-black uppercase tracking-[1.5em] text-neon-blue/60">Professional Credentials</span>
                     </motion.div>
                     <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none uppercase overflow-visible py-4">
-                        Verified <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-4">Expertise&nbsp;</span>
+                        Verified <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-4">Expertise&nbsp;</span>
                     </h2>
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
                     {certificates.map((cert, index) => (
-                        <div key={index} className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(25%-1.5rem)] min-w-[280px] max-w-[360px]">
+                        <div key={index} className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-2rem)] xl:w-[calc(25%-1.5rem)] min-w-70 max-w-90">
                             <CertificateCard
                                 cert={cert}
                                 index={index}
@@ -240,7 +240,7 @@ const Certificates = () => {
                 {/* Highly Immersive Modal Viewer */}
                 <AnimatePresence>
                     {selectedCert && (
-                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+                        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-8">
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -256,7 +256,7 @@ const Certificates = () => {
                                 transition={{ type: "spring", duration: 0.6 }}
                                 className="relative w-full max-w-6xl bg-[#0a0a0a] border border-white/10 rounded-[3.5rem] overflow-hidden shadow-[0_0_150px_rgba(0,243,255,0.1)]"
                             >
-                                <div className="flex flex-col lg:flex-row min-h-[600px]">
+                                <div className="flex flex-col lg:flex-row min-h-150">
                                     {/* Certificate Showcase */}
                                     <div className="w-full lg:w-3/5 relative group p-10 flex items-center justify-center bg-black/40 border-b lg:border-b-0 lg:border-r border-white/5">
                                         <div className="relative w-full aspect-[1.414/1] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/20">
@@ -265,7 +265,7 @@ const Certificates = () => {
                                                 alt={selectedCert.title}
                                                 className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
 
                                             {/* Watermark/Seal Effect */}
                                             <div className="absolute bottom-10 left-10 flex items-center gap-4">
@@ -281,7 +281,7 @@ const Certificates = () => {
                                     </div>
 
                                     {/* Intelligence Panel */}
-                                    <div className="w-full lg:w-2/5 p-12 lg:p-16 flex flex-col justify-between relative bg-gradient-to-br from-[#0f0f0f] to-black">
+                                    <div className="w-full lg:w-2/5 p-12 lg:p-16 flex flex-col justify-between relative bg-linear-to-br from-[#0f0f0f] to-black">
                                         <div className="space-y-10">
                                             <div className="flex justify-between items-start">
                                                 <div className="w-20 h-20 rounded-2xl bg-black border border-white/5 p-4 flex items-center justify-center shadow-inner">
@@ -336,7 +336,7 @@ const Certificates = () => {
                                                 className="w-full py-6 bg-neon-blue text-black font-black uppercase tracking-[0.4em] text-xs rounded-2xl shadow-[0_20px_40px_rgba(0,243,255,0.15)] relative overflow-hidden group"
                                             >
                                                 <span className="relative z-10">Verify Document</span>
-                                                <div className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 opacity-30 skew-x-[30deg]" />
+                                                <div className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-full transition-transform duration-1000 opacity-30 skew-x-30" />
                                             </motion.button>
                                             <p className="text-center text-[9px] font-black text-white/20 uppercase tracking-[0.3em]">Block-Chain Verified • 2024</p>
                                         </div>

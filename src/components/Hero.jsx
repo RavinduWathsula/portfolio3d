@@ -74,7 +74,7 @@ const Hero = () => {
                         transition={{ duration: 1, delay: 0.7 }}
                         className="text-sm sm:text-base md:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 md:mb-10 leading-relaxed font-medium"
                     >
-                        Independent designer & developer specializing in <span className="text-white font-bold border-b-2 border-neon-blue/30 pb-0.5">high-end digital experiences</span>.
+                        Software Engineer designing powerful digital experiences <span className="text-white font-bold border-b-2 border-neon-blue/30 pb-0.5">high-end digital experiences</span>.
                         Merging industrial precision with creative soul to build the future of the web.
                     </motion.p>
 

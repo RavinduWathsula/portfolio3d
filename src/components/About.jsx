@@ -57,7 +57,7 @@ const StatItem = ({ icon: Icon, value, label, color, glowColor }) => (
         </div>
         <div className="flex flex-col">
             <span className={`text-2xl sm:text-4xl font-black text-white leading-none tracking-tighter group-hover:text-${color} transition-colors duration-500`}>{value}</span>
-            <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mt-1 sm:mt-2">{label}</span>
+            <span className="text-[10px] sm:text-[12px] font-black uppercase tracking-[0.2em] text-gray-500 mt-1 sm:mt-2">{label}</span>
         </div>
     </div>
 )
@@ -103,10 +103,10 @@ const HolographicCard = ({ rotateX, rotateY }) => {
                             <span className="text-neon-blue inline-block mt-1">Undergraduate</span>
                         </h4>
                         <div className="space-y-1">
-                            <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest leading-relaxed">
+                            <p className="text-[10px] text-gray-400 font-black uppercase tracking-wider leading-relaxed">
                                 General Sir John Kotelawala
                             </p>
-                            <p className="text-[10px] text-white/60 font-black uppercase tracking-widest leading-relaxed">
+                            <p className="text-[10px] text-white/60 font-black uppercase tracking-wider leading-relaxed">
                                 Defence University (KDU)
                             </p>
                         </div>
