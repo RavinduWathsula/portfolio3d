@@ -9,7 +9,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Background3D from './components/Background3D'
-import Footer from './components/Footer'
+
 
 function App() {
   const { scrollYProgress } = useScroll()
@@ -36,7 +36,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
-      <Footer />
+
     </div >
   )
 }

@@ -62,8 +62,8 @@ const Hero = () => {
                             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                             className="text-[clamp(2.5rem,10vw,5rem)] xl:text-[6rem] 2xl:text-[7rem] font-black tracking-tighter leading-[0.9] py-2"
                         >
-                            ENGINEERING <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow animate-breathing bg-[length:200%_auto]">AESTHETICS</span>
+                            THE FUTURE <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-purple italic animate-gradient-flow animate-breathing bg-[length:200%_auto]">ENGINEERING </span>
                         </motion.h1>
                     </div>
 

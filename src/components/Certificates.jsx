@@ -79,7 +79,7 @@ const CertificateCard = ({ cert, index, onClick }) => {
                                 </div>
                                 <div className="flex items-center gap-1 text-neon-blue/40 mt-0.5 flex-wrap justify-end">
                                     <ShieldCheck size={10} className="shrink-0" />
-                                    <span className="text-[8px] font-black uppercase tracking-widest leading-tight opacity-80 whitespace-normal">VALID: {cert.id.split('-').pop()}</span>
+                                    <span className="text-[8px] font-black uppercase tracking-widest leading-tight opacity-80 whitespace-normal">VALID: {cert.id ? cert.id.split('-').pop() : 'N/A'}</span>
                                 </div>
                             </div>
                         </div>
@@ -142,52 +142,52 @@ const Certificates = () => {
 
     const certificates = [
         {
-            title: "Advanced Software Engineering",
+            title: "PYTHON FOR BEGINNERS",
             issuer: "Full Stack Mastery",
-            date: "JAN 2024",
+            date: "FEB 2025",
             logo: "/assets/certificates/University_of_Moratuwa_logo.png",
-            image: "/assets/certificates/certificate_placeholder.png",
+            image: "/assets/certificates/WhatsApp Image 2026-03-07 at 20.10.20.jpeg",
             summary: "Mastered high-performance system design and optimized distributed architectures for global scalability.",
             metric: "98% OPTIMIZED",
-            description: "Demonstrated excellence in implementing complex distributed systems, modern frontend architectures, and performance optimization strategies.",
-            tech: ["React", "Node.js", "Systems"],
-            id: "CERT-FSM-2024-001"
+            description: "Completed Python for Beginners, gaining foundational knowledge in programming logic, variables, loops, and functions using Python..",
+            tech: ["PYTHON"],
+
         },
         {
-            title: "UI/UX Aesthetic Engineering",
-            issuer: "Design Institute",
-            date: "MAR 2024",
-            logo: "/assets/certificates/design_institute_logo.png",
-            image: "/assets/certificates/certificate_placeholder.png",
+            title: "PYTHON FOR BEGINNERS-LEARN ALL THE BASICS OF PYTHON",
+            issuer: "UDEMY",
+            date: "MAR 2025",
+            logo: "/assets/certificates/images.png",
+            image: "/assets/certificates/Udemy 01..jpg",
             summary: "Specialized in emotional design through motion and high-fidelity interactive prototyping.",
-            metric: "ELITE DESIGNER",
+            metric: "CODER",
             description: "Awarded for mastery in creating immersive digital experiences, combining technical precision with visual excellence in web development.",
-            tech: ["Motion", "GSAP", "Three.js"],
-            id: "CERT-DI-2024-042"
+            tech: ["PYTHON"],
+            
         },
         {
-            title: "Cloud Infrastructure Specialist",
-            issuer: "Cloud Masters Inc",
-            date: "APR 2024",
-            logo: "/assets/certificates/full_stack_mastery_logo.png",
-            image: "/assets/certificates/certificate_placeholder.png",
-            summary: "Automated core infrastructure deployment using advanced IaC patterns and zero-downtime CI/CD.",
+            title: "PYTHON COMPLETE COURSE AND FLASK FRAMEWORK",
+            issuer: "UDEMY",
+            date: "MAR 2025",
+            logo: "/assets/certificates/images.png",
+            image: "/assets/certificates/UDEMY 02..jpg",
+            summary: "Developed Python programming skills and learned to create simple web applications using Flask",
             metric: "99.9% UPTIME",
-            description: "Expertise in deploying and managing scalable cloud architectures, specializing in serverless computing and automated CI/CD pipelines.",
-            tech: ["AWS", "Docker", "Terraform"],
-            id: "CERT-CMS-2024-088"
+            description: "Learned core Python programming concepts and built web applications using the Flask framework, including routing, templates, and basic backend development.",
+            tech: ["PYTHON", "FLASK"],
+            
         },
         {
             title: "Master of Data Science & AI",
             issuer: "AI Research Lab",
             date: "MAY 2024",
-            logo: "/assets/certificates/global_tech_academy_logo.png",
+            logo: "/assets/certificates/net-academy-logo.png",
             image: "/UDEMY.png",
             summary: "Implemented neural network models for predictive analysis and big-data pattern recognition.",
             metric: "AI PROTOTYPING",
             description: "Intensive focus on machine learning algorithms, deep neural networks, and advanced data visualization techniques for predictive analysis.",
             tech: ["Python", "TensorFlow", "ML"],
-            id: "CERT-ARL-2024-210"
+            
         },
         {
             title: "Cybersecurity & Defence Systems",
@@ -199,7 +199,7 @@ const Certificates = () => {
             metric: "SECURE CORE",
             description: "Completed specialized training in identifying vulnerabilities, implementing robust network security, and modern encryption standards.",
             tech: ["Security", "Network", "Encryption"],
-            id: "CERT-GTA-2024-118"
+            
         }
     ]
 
