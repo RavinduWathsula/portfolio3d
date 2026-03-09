@@ -150,9 +150,9 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="py-24 lg:py-40 bg-transparent flex items-center justify-center overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-24 gap-12">
+        <section id="projects" className="py-16 sm:py-20 md:py-24 lg:py-40 bg-transparent flex items-center justify-center overflow-hidden">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 relative z-10 w-full">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 sm:mb-20 md:mb-24 gap-8 sm:gap-10 md:gap-12">
                     <div className="space-y-4">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -163,13 +163,13 @@ const Projects = () => {
                             <div className="w-12 h-[1px] bg-neon-blue" />
                             <span className="text-xs font-black uppercase tracking-[1em] text-neon-blue">Selected Works</span>
                         </motion.div>
-                        <h2 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none overflow-visible py-2">
-                            FEATURED <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-4">ENGINEERING&nbsp;</span>
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none overflow-visible py-2">
+                            FEATURED <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-purple via-neon-blue to-neon-purple italic pr-2 sm:pr-4">ENGINEERING&nbsp;</span>
                         </h2>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} index={index} />
                     ))}
@@ -180,7 +180,7 @@ const Projects = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false }}
-                    className="mt-24 p-8 sm:p-12 bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[2.5rem] flex flex-col items-center justify-center relative overflow-hidden group shadow-[0_10px_30px_-10px_rgba(0,243,255,0.05)] hover:border-neon-blue/40 transition-all duration-500"
+                    className="mt-16 sm:mt-20 md:mt-24 p-4 sm:p-8 md:p-12 bg-[#050505]/80 backdrop-blur-3xl border border-white/10 rounded-[2.5rem] flex flex-col items-center justify-center relative overflow-hidden group shadow-[0_10px_30px_-10px_rgba(0,243,255,0.05)] hover:border-neon-blue/40 transition-all duration-500"
                 >
                     <div className="absolute inset-0 bg-linear-to-br from-neon-blue/5 via-transparent to-neon-purple/5 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -209,7 +209,7 @@ const Projects = () => {
                             ))}
                         </div>
 
-                        <div className="p-4 sm:p-6 rounded-2xl bg-black/60 border border-white/5 w-full overflow-x-auto flex justify-center custom-scrollbar relative">
+                        <div className="p-2 sm:p-4 md:p-6 rounded-2xl bg-black/60 border border-white/5 w-full overflow-x-auto flex justify-center custom-scrollbar relative">
                             <div className="min-w-max">
                                 <GitHubCalendar
                                     username="RavinduWathsula"
@@ -237,10 +237,10 @@ const Projects = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    className="mt-20 flex justify-center"
+                    className="mt-12 sm:mt-16 md:mt-20 flex justify-center"
                 >
-                    <button className="group relative px-10 py-5 bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl hover:border-neon-blue/50 transition-all">
-                        <span className="relative z-10 font-black text-sm uppercase tracking-[0.3em] text-gray-400 group-hover:text-white transition-colors">Explore All Deployments</span>
+                    <button className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-2xl hover:border-neon-blue/50 transition-all">
+                        <span className="relative z-10 font-black text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-400 group-hover:text-white transition-colors">Explore All Deployments</span>
                         <div className="absolute inset-0 bg-neon-blue/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     </button>
                 </motion.div>
