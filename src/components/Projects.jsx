@@ -1,5 +1,5 @@
 import React from 'react'
-// import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useState, useRef } from 'react'
 import { ExternalLink, Github, Code2, Monitor, ArrowUpRight, Calendar as CalendarIcon } from 'lucide-react'
 import { GitHubCalendar } from 'react-github-calendar'
