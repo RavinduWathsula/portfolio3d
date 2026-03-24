@@ -20,14 +20,14 @@ function App() {
   })
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-[#050505] overflow-x-hidden">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-neon-blue origin-left z-[60]"
+        className="fixed top-0 left-0 right-0 h-1 bg-neon-blue origin-left z-60"
         style={{ scaleX }}
       />
       <Background3D />
       <Navbar />
-      <main>
+      <main className="flex flex-col gap-0 md:gap-0 w-full">
         <Hero />
         <About />
         <Education />
@@ -36,8 +36,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
-
-    </div >
+    </div>
   )
 }
 

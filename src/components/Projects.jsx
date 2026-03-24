@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 import { useState, useRef } from 'react'
 import { ExternalLink, Github, Code2, Monitor, ArrowUpRight, Calendar as CalendarIcon } from 'lucide-react'
 import { GitHubCalendar } from 'react-github-calendar'
@@ -51,7 +51,7 @@ const ProjectCard = ({ project, index }) => {
                     <div className="absolute inset-0 bg-[#0a0a0f]" />
                     {/* Futuristic Grid Overlay */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,243,255,0.05)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[20px_20px]" />
 
                     {/* Project Floating Tech ID */}
                     <div className="absolute top-6 left-6 flex items-center gap-2 px-3 py-1 transparent-glass rounded-full border border-white/10 z-20">
@@ -89,7 +89,7 @@ const ProjectCard = ({ project, index }) => {
                                 className="w-full h-full object-cover opacity-40 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700"
                             />
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/40 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0f] via-[#0a0a0f]/40 to-transparent" />
                     </div>
                 </div>
 
@@ -150,9 +150,9 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="py-16 sm:py-20 md:py-24 lg:py-40 bg-transparent flex items-center justify-center overflow-hidden">
-            <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 relative z-10 w-full">
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 sm:mb-20 md:mb-24 gap-8 sm:gap-10 md:gap-12">
+        <section id="projects" className="py-12 xs:py-16 sm:py-20 md:py-24 lg:py-40 bg-transparent flex items-center justify-center overflow-hidden w-full">
+            <div className="max-w-7xl mx-auto px-2 xs:px-3 sm:px-4 md:px-6 relative z-10 w-full">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 xs:mb-16 sm:mb-20 md:mb-24 gap-6 xs:gap-8 sm:gap-10 md:gap-12 w-full">
                     <div className="space-y-4">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -160,7 +160,7 @@ const Projects = () => {
                             viewport={{ once: false }}
                             className="flex items-center gap-4"
                         >
-                            <div className="w-12 h-[1px] bg-neon-blue" />
+                            <div className="w-12 h-px bg-neon-blue" />
                             <span className="text-xs font-black uppercase tracking-[1em] text-neon-blue">Selected Works</span>
                         </motion.div>
                         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none overflow-visible py-2">
@@ -169,7 +169,7 @@ const Projects = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} index={index} />
                     ))}
