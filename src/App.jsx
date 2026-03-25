@@ -20,7 +20,7 @@ function App() {
   })
 
   return (
-    <div className="relative min-h-screen bg-[#050505] overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden">
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-neon-blue origin-left z-60"
         style={{ scaleX }}

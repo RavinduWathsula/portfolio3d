@@ -57,31 +57,32 @@ const EducationCard = ({ item, index }) => {
                         className="absolute -inset-4 bg-gradient-to-r from-neon-blue/30 to-neon-purple/30 blur-2xl rounded-[3rem] transition-opacity duration-1000"
                     />
 
-                    <div className="relative bg-[#ffffff03] backdrop-blur-3xl border border-white/10 rounded-[2.5rem] p-8 sm:p-12 shadow-2xl group-hover:border-neon-blue/40 transition-all duration-500 overflow-y-auto">
+                    <div className="relative bg-[#ffffff03] backdrop-blur-3xl border border-white/10 rounded-[2.5rem] p-8 sm:p-12 shadow-2xl group-hover:border-neon-blue/40 transition-all duration-500 overflow-visible">
                         {/* Internal Digital Particles */}
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(0,243,255,0.05)_1px,transparent_0)] bg-[size:16px_16px] pointer-events-none" />
 
-                        <div className="relative z-10 flex flex-col gap-8">                            <div className="flex items-start justify-between gap-4">
-                            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-black/40 border border-white/10 flex items-center justify-center p-4 relative flex-shrink-0 overflow-hidden group-hover:shadow-[0_0_40px_rgba(0,243,255,0.3)] transition-all duration-700">
-                                <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                {item.logo && !imageError ? (
-                                    <img
-                                        src={item.logo}
-                                        alt={item.institution}
-                                        onError={() => setImageError(true)}
-                                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                ) : (
-                                    <item.icon className="text-neon-blue group-hover:animate-pulse" size={40} />
-                                )}
+                        <div className="relative z-10 flex flex-col gap-8">
+                            <div className="flex items-start justify-between gap-4 flex-wrap">
+                                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-black/40 border border-white/10 flex items-center justify-center p-4 relative flex-shrink-0 overflow-hidden group-hover:shadow-[0_0_40px_rgba(0,243,255,0.3)] transition-all duration-700">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    {item.logo && !imageError ? (
+                                        <img
+                                            src={item.logo}
+                                            alt={item.institution}
+                                            onError={() => setImageError(true)}
+                                            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                    ) : (
+                                        <item.icon className="text-neon-blue group-hover:animate-pulse" size={40} />
+                                    )}
+                                </div>
+                                <div className="text-right flex flex-col items-end min-w-0 flex-shrink">
+                                    <span className="px-4 py-1.5 rounded-full bg-neon-blue/10 border border-neon-blue/20 text-[10px] font-black text-neon-blue uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(0,243,255,0.1)] text-right">
+                                        {item.location}
+                                    </span>
+                                    <div className="text-sm font-black text-white/40 mt-3 tracking-[0.4em]">{item.year}</div>
+                                </div>
                             </div>
-                            <div className="text-right flex flex-col items-end flex-shrink-0">
-                                <span className="px-4 py-1.5 rounded-full bg-neon-blue/10 border border-neon-blue/20 text-[10px] font-black text-neon-blue uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(0,243,255,0.1)] w-fit">
-                                    {item.location}
-                                </span>
-                                <div className="text-sm font-black text-white/40 mt-3 tracking-[0.4em]">{item.year}</div>
-                            </div>
-                        </div>
 
                             <div className="space-y-5">
                                 <h3 className="text-[clamp(1.5rem,5vw,2.5rem)] font-black text-white leading-[1.1] tracking-tighter group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-neon-blue group-hover:to-white transition-all duration-500">
@@ -93,9 +94,9 @@ const EducationCard = ({ item, index }) => {
                                 </p>
                             </div>
 
-                            <div className="flex flex-wrap gap-3 pt-4">
+                            <div className="flex flex-wrap gap-3 pt-4 overflow-visible">
                                 {item.tags.map((tag, tIndex) => (
-                                    <span key={tIndex} className="text-[10px] font-black uppercase tracking-widest px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-gray-400 group-hover:text-white group-hover:bg-neon-blue/10 group-hover:border-neon-blue/20 transition-all">
+                                    <span key={tIndex} className="text-[10px] font-black uppercase tracking-widest px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-gray-400 group-hover:text-white group-hover:bg-neon-blue/10 group-hover:border-neon-blue/20 transition-all whitespace-nowrap">
                                         {tag}
                                     </span>
                                 ))}
