@@ -110,7 +110,7 @@ const InfoCard = ({ icon: IconComponent, title, value, href, index }) => {
 
 /* ═════════════════ MAIN CONTACT COMPONENT ═════════════════ */
 const Contact = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [status, setStatus] = useState('idle'); // idle | sending | sent | error
 
     const handleChange = (field) => (e) => {
@@ -122,22 +122,21 @@ const Contact = () => {
         setStatus('sending');
 
         emailjs.send(
-            'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-            'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+            'service_j08oycm',
+            'template_09kegoc',
             {
                 from_name: formData.name,
                 to_name: 'Ravindu Wathsula',
                 from_email: formData.email,
                 to_email: 'rvwathsula@gmail.com',
-                subject: formData.subject,
                 message: formData.message,
             },
-            'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+            'Az3yrEgNFXaAUP61h'
         ).then(() => {
             setStatus('sent');
             setTimeout(() => {
                 setStatus('idle');
-                setFormData({ name: '', email: '', subject: '', message: '' });
+                setFormData({ name: '', email: '', message: '' });
             }, 3000);
         }, (error) => {
             console.log('EMAILJS ERROR:', error);
@@ -268,14 +267,7 @@ const Contact = () => {
                                     />
                                 </div>
 
-                                <ModernInput
-                                    id="contact-subject"
-                                    label="Subject"
-                                    placeholder="What would you like to discuss?"
-                                    value={formData.subject}
-                                    onChange={handleChange('subject')}
-                                    icon={MessageCircle}
-                                />
+
 
                                 <ModernInput
                                     id="contact-message"
