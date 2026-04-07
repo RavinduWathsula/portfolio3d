@@ -1,0 +1,40 @@
+Creative CV
+============
+
+Name: Ravindu Wathsula
+Role: Full Stack Developer
+
+Profile:
+--------
+Innovative developer with a passion for building beautiful, performant web applications. Experienced in React, Node.js, and 3D web experiences.
+
+Skills:
+-------
+- React, Next.js, Vite
+- Node.js, Express
+- Three.js, WebGL
+- Tailwind CSS, Styled Components
+- Git, GitHub, CI/CD
+
+Experience:
+-----------
+1. Portfolio Website (2026)
+   - Designed and developed a 3D interactive portfolio using React and Three.js.
+   - Implemented smooth navigation and creative UI/UX.
+
+2. Open Source Contributor
+   - Contributed to several open source projects in the React ecosystem.
+
+Education:
+----------
+B.Sc. in Computer Science
+
+Contact:
+--------
+Email: ravindu@example.com
+LinkedIn: linkedin.com/in/ravindu-wathsula-75265333a
+GitHub: github.com/RavinduWathsula
+
+---
+
+For a full creative PDF, consider using a PDF generator or design tool. This is a placeholder for integration.

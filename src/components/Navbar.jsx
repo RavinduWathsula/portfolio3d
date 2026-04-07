@@ -4,6 +4,10 @@ import { FiGithub, FiLinkedin, FiMenu, FiX } from 'react-icons/fi'
 
 const Navbar = () => {
     const navItems = ['Home', 'About', 'Education', 'Certificates', 'Skills', 'Projects', 'Contact']
+    // Add Resume button handler
+    const handleResumeClick = () => {
+        window.open('/assets/cv.txt', '_blank');
+    }
     const [activeSection, setActiveSection] = useState('home')
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -76,7 +80,6 @@ const Navbar = () => {
                     {navItems.map((item) => {
                         const id = item.toLowerCase()
                         const isActive = activeSection === id
-
                         return (
                             <li key={item} className="relative">
                                 <a
@@ -96,6 +99,15 @@ const Navbar = () => {
                             </li>
                         )
                     })}
+                    {/* Resume Button */}
+                    <li>
+                        <button
+                            onClick={handleResumeClick}
+                            className="ml-4 px-4 py-2 rounded-full font-bold bg-linear-to-r from-neon-blue to-neon-purple text-white shadow-lg hover:scale-105 transition-transform"
+                        >
+                            RESUME
+                        </button>
+                    </li>
                 </ul>
 
                 {/* Mobile Menu (Dropdown) */}
@@ -122,6 +134,13 @@ const Navbar = () => {
                                     </a>
                                 )
                             })}
+                            {/* Resume Button Mobile */}
+                            <button
+                                onClick={handleResumeClick}
+                                className="mt-4 px-4 py-2 rounded-full font-bold bg-gradient-to-r from-neon-blue to-neon-purple text-white shadow-lg hover:scale-105 transition-transform"
+                            >
+                                RESUME
+                            </button>
                             <div className="flex gap-6 pt-4 border-t border-white/10">
                                 <a href="https://github.com/RavinduWathsula" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
                                     <FiGithub size={20} />

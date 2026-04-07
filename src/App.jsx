@@ -13,14 +13,15 @@ import Background3D from './components/Background3D'
 
 function App() {
   const { scrollYProgress } = useScroll()
+  // Smoother spring settings for scroll progress bar
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 60,
+    damping: 40,
     restDelta: 0.001
   })
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden will-change-transform">
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-neon-blue origin-left z-60"
         style={{ scaleX }}

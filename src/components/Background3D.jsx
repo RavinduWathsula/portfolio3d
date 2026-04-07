@@ -7,12 +7,13 @@ import * as THREE from 'three'
 
 function StarField(props) {
     const ref = useRef()
-    const sphere = useMemo(() => random.inSphere(new Float32Array(15000), { radius: 1.5 }), [])
+    // Reduce star count for better performance
+    const sphere = useMemo(() => random.inSphere(new Float32Array(4000), { radius: 1.5 }), [])
 
     useFrame((state, delta) => {
         if (ref.current) {
-            ref.current.rotation.x -= delta / 25
-            ref.current.rotation.y -= delta / 35
+            ref.current.rotation.x -= delta / 30 // slower
+            ref.current.rotation.y -= delta / 40 // slower
         }
     })
 
@@ -68,7 +69,7 @@ function ReactiveGrid() {
 
 const Background3D = () => {
     return (
-        <div className="fixed inset-0 -z-10 bg-[#020205]">
+        <div className="fixed inset-0 -z-10 bg-[#020205] will-change-transform">
             <Canvas dpr={[1, 2]}>
                 <PerspectiveCamera makeDefault position={[0, 0, 1.5]} fov={75} />
                 <color attach="background" args={['#020205']} />
